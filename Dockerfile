@@ -1,13 +1,10 @@
-FROM python:3.9-slim-buster
-
-RUN apt-get update && apt-get -y install python
+FROM python:3.9-slim
 
 WORKDIR /app
 
 COPY . /app
 
-RUN pip install Flask
-RUN pip install Flask-SQLAlchemy
+RUN pip install Flask Flask-SQLAlchemy
 
 ENV FLASK_APP=app.py
 ENV FLASK_DEBUG=0
